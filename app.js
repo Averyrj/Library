@@ -1,8 +1,4 @@
 let myLibrary = [];
-const newTitle = document.getElementById("title")
-const newAuthor = document.getElementById("author")
-
-const newBook = new Book(newTitle.value, newAuthor.value)
 
 function Book(title, author) {
     this.title = title
@@ -10,8 +6,15 @@ function Book(title, author) {
     console.log(title, author)
 }
 
-function addBookToLibrary() {
-    // do stuff here
+function submitFunction() {
+    document.getElementById("form1").submit();
+    const newTitle = document.getElementById("title").value;
+    const newAuthor = document.getElementById("author").value;
+    const newBook = new Book(newTitle, newAuthor)
+    myLibrary.push(newBook)
+    console.log(myLibrary[0])
 }
+
+
 
 const tester = new Book('eye of the world', 'robert jordan')
